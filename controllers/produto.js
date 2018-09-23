@@ -3,12 +3,12 @@ const logger = require('../servicos/logger.js');
 module.exports = function(app){
 
     //LISTA TODOS OS PRODUTOS
-    app.get('/produtos/', (req, res) => {
+    app.get('/produtos/', function(req, res) {
         
         const connection  = app.persistencia.connectionFactory();
         const produtoDAO  = new app.persistencia.ProdutoDAO(connection);
 
-        produtoDAO.lista((erro, produtos) => {
+        produtoDAO.lista(function(erro, produtos) {
            
             if(erro){
                 logger.error(erro);

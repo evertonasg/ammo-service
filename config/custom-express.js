@@ -3,7 +3,7 @@ var cors                = require('cors');
 var consign             = require('consign');
 var bodyParser          = require('body-parser');
 
-module.exports = () => {
+module.exports = function() {
     var app = express();
 
     app.use(cors());
